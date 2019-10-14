@@ -1,6 +1,6 @@
 {
   "name": "react-native-segmented-progress-bar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React Native component for having segmented or multipart progress bar",
   "main": "index.js",
   "scripts": {

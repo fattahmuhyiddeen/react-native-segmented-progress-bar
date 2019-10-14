@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { CustomText } from 'components/text';
+import { View, StyleSheet, Text } from 'react-native';
 
 export default ({
   labels,
@@ -31,7 +30,7 @@ export default ({
         <View style={{ flexDirection: 'row' }}>
           {sectionsPercentage.map((w, i) =>
             i < sectionsPercentage.length - 1 ? (
-              <CustomText
+              <Text
                 key={i}
                 children={separatorValues[i]}
                 style={{ width: `${w}%`, textAlign: 'right', fontSize: 8 }}
@@ -72,7 +71,7 @@ export default ({
       {labels && (
         <View style={{ flexDirection: 'row' }}>
           {sectionsPercentage.map((w, i) => (
-            <CustomText
+            <Text
               key={i}
               children={labels[i]}
               style={{ width: `${w}%`, textAlign: 'center', fontSize: 8 }}
