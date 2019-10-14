@@ -24,63 +24,61 @@ export default ({
   const differenceCircleWithProgress = 5;
   const circleHight = height + differenceCircleWithProgress;
   const paddingWithLabel = 10;
-  return (
-    <>
-      {showSeparatorValue && (
-        <View style={{ flexDirection: 'row' }}>
-          {sectionsPercentage.map((w, i) =>
-            i < sectionsPercentage.length - 1 ? (
-              <Text
-                key={i}
-                children={separatorValues[i]}
-                style={{ width: `${w}%`, textAlign: 'right', fontSize: 8 }}
-              />
-            ) : null,
-          )}
-        </View>
-      )}
-      <View style={{ paddingVertical: paddingWithLabel }}>
-        <View
-          style={[styles.chartContainer, { height, borderRadius: height / 2 }]}
-        >
-          {sectionsPercentage.map((w, i) => (
-            <View
-              key={i}
-              style={{ width: `${w}%`, backgroundColor: colors[i], height }}
-            />
-          ))}
-        </View>
-        {cicleValue && (
-          <View
-            style={{
-              position: 'absolute',
-              backgroundColor: 'black',
-              borderColor: 'white',
-              borderWidth: 1,
-              height: circleHight,
-              width: circleHight,
-              borderRadius: circleHight,
-              left: `${cicleValue}%`,
-              top: Math.abs(
-                paddingWithLabel - differenceCircleWithProgress / 2,
-              ),
-            }}
-          />
-        )}
-      </View>
-      {labels && (
-        <View style={{ flexDirection: 'row' }}>
-          {sectionsPercentage.map((w, i) => (
+  return (<>
+    {showSeparatorValue && (
+      <View style={{ flexDirection: 'row' }}>
+        {sectionsPercentage.map((w, i) =>
+          i < sectionsPercentage.length - 1 ? (
             <Text
               key={i}
-              children={labels[i]}
-              style={{ width: `${w}%`, textAlign: 'center', fontSize: 8 }}
+              children={separatorValues[i]}
+              style={{ width: `${w}%`, textAlign: 'right', fontSize: 8 }}
             />
-          ))}
-        </View>
+          ) : null,
+        )}
+      </View>
+    )}
+    <View style={{ paddingVertical: paddingWithLabel }}>
+      <View
+        style={[styles.chartContainer, { height, borderRadius: height / 2 }]}
+      >
+        {sectionsPercentage.map((w, i) => (
+          <View
+            key={i}
+            style={{ width: `${w}%`, backgroundColor: colors[i], height }}
+          />
+        ))}
+      </View>
+      {cicleValue && (
+        <View
+          style={{
+            position: 'absolute',
+            backgroundColor: 'black',
+            borderColor: 'white',
+            borderWidth: 1,
+            height: circleHight,
+            width: circleHight,
+            borderRadius: circleHight,
+            left: `${cicleValue}%`,
+            top: Math.abs(
+              paddingWithLabel - differenceCircleWithProgress / 2,
+            ),
+          }}
+        />
       )}
-    </>
-  );
+    </View>
+    {labels && (
+      <View style={{ flexDirection: 'row' }}>
+        {sectionsPercentage.map((w, i) => (
+          <Text
+            key={i}
+            children={labels[i]}
+            style={{ width: `${w}%`, textAlign: 'center', fontSize: 8 }}
+          />
+        ))}
+      </View>
+    )}
+  </>);
 };
 
 const styles = StyleSheet.create({

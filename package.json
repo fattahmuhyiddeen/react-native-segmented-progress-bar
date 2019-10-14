@@ -1,6 +1,6 @@
 {
   "name": "react-native-segmented-progress-bar",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React Native component for having segmented or multipart progress bar",
   "main": "index.js",
   "scripts": {
@@ -10,8 +10,18 @@
     "type": "git",
     "url": "git+https://github.com/fattahmuhyiddeen/react-native-segmented-progress-bar.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "react",
+    "react-native",
+    "progress",
+    "multi",
+    "multipart",
+    "multi-part",
+    "bar",
+    "chart",
+    "segmented"
+  ],
+  "author": "fattahmuhyiddeen@gmail.com",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/fattahmuhyiddeen/react-native-segmented-progress-bar/issues"
