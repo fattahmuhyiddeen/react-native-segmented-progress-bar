@@ -21,7 +21,9 @@ export default ({
     (_, i) => i !== 0 && i !== values.length - 1,
   );
   const cicleValue =
-    position != null && adjustedFinalValue !== 0 ? (100 * (position - values[0])) / adjustedFinalValue : null;
+    position != null &&
+      position >= values[0] && position <= finalValue &&
+      adjustedFinalValue !== 0 ? (100 * (position - values[0])) / adjustedFinalValue : null;
   const differenceCircleWithProgress = 5;
   const circleHight = height + differenceCircleWithProgress;
   const paddingWithLabel = 10;
