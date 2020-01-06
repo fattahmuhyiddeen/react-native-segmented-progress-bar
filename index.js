@@ -50,7 +50,7 @@ export default ({
           />
         ))}
       </View>
-      {cicleValue && (
+      {!!cicleValue && (
         <View
           style={{
             position: 'absolute',
@@ -68,7 +68,7 @@ export default ({
         />
       )}
     </View>
-    {labels && (
+    {!!labels && (
       <View style={{ flexDirection: 'row' }}>
         {sectionsPercentage.map((w, i) => (
           <Text
