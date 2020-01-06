@@ -11,16 +11,17 @@ export default ({
 }) => {
   const sectionsPercentage = [];
   const finalValue = values[values.length - 1];
+  const adjustedFinalValue = finalValue - values[0];
   values.forEach(
     (v, i) =>
-      i < values.length - 1 &&
-      sectionsPercentage.push((100 * (values[i + 1] - v)) / finalValue),
+      i < values.length - 1 && adjustedFinalValue !== 0 &&
+      sectionsPercentage.push((100 * (values[i + 1] - v)) / adjustedFinalValue),
   );
   const separatorValues = values.filter(
     (_, i) => i !== 0 && i !== values.length - 1,
   );
   const cicleValue =
-    position != null && finalValue ? (100 * position) / finalValue : null;
+    position != null && adjustedFinalValue !== 0 ? (100 * (position - values[0])) / adjustedFinalValue : null;
   const differenceCircleWithProgress = 5;
   const circleHight = height + differenceCircleWithProgress;
   const paddingWithLabel = 10;
