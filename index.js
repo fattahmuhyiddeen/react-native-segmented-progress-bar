@@ -17,9 +17,7 @@ export default ({
       i < values.length - 1 && adjustedFinalValue !== 0 &&
       sectionsPercentage.push((100 * (values[i + 1] - v)) / adjustedFinalValue),
   );
-  const separatorValues = values.filter(
-    (_, i) => i !== 0 && i !== values.length - 1,
-  );
+  const separatorValues = values.filter((_, i) => i !== 0 && i !== values.length - 1);
   const cicleValue =
     position != null &&
       position >= values[0] && position <= finalValue &&
@@ -30,21 +28,20 @@ export default ({
   return (<>
     {showSeparatorValue && (
       <View style={{ flexDirection: 'row' }}>
-        {sectionsPercentage.map((w, i) =>
-          i < sectionsPercentage.length - 1 ? (
-            <Text
-              key={i}
-              children={separatorValues[i]}
-              style={{ width: `${w}%`, textAlign: 'right', fontSize: 8 }}
-            />
-          ) : null,
-        )}
+        {sectionsPercentage.map((w, i) => (
+          <View key={i} style={{ width: `${w}%`, backgroundColor: 'transparent' }}>
+            {i > 0 && (
+              <Text
+                children={separatorValues[i - 1]}
+                style={{ fontSize: 8 }}
+              />
+            )}
+          </View>
+        ))}
       </View>
     )}
     <View style={{ paddingVertical: paddingWithLabel }}>
-      <View
-        style={[styles.chartContainer, { height, borderRadius: height / 2 }]}
-      >
+      <View style={[styles.chartContainer, { height, borderRadius: height / 2 }]}>
         {sectionsPercentage.map((w, i) => (
           <View
             key={i}
