@@ -6,6 +6,7 @@ export default ({
   values,
   colors,
   height = 8,
+  borderRadius,
   showSeparatorValue,
   position = null,
 }) => {
@@ -18,12 +19,12 @@ export default ({
       sectionsPercentage.push((100 * (values[i + 1] - v)) / adjustedFinalValue),
   );
   const separatorValues = values.filter((_, i) => i !== 0 && i !== values.length - 1);
-  const cicleValue =
+  const circleValue =
     position != null &&
       position >= values[0] && position <= finalValue &&
       adjustedFinalValue !== 0 ? (100 * (position - values[0])) / adjustedFinalValue : null;
   const differenceCircleWithProgress = 5;
-  const circleHight = height + differenceCircleWithProgress;
+  const circleHeight = height + differenceCircleWithProgress;
   const paddingWithLabel = 10;
   return (<>
     {showSeparatorValue && (
@@ -41,7 +42,7 @@ export default ({
       </View>
     )}
     <View style={{ paddingVertical: paddingWithLabel }}>
-      <View style={[styles.chartContainer, { height, borderRadius: height / 2 }]}>
+      <View style={[styles.chartContainer, { height, borderRadius: borderRadius || (height / 2) }]}>
         {sectionsPercentage.map((w, i) => (
           <View
             key={i}
@@ -49,17 +50,17 @@ export default ({
           />
         ))}
       </View>
-      {!!cicleValue && (
+      {!!circleValue && (
         <View
           style={{
             position: 'absolute',
             backgroundColor: 'black',
             borderColor: 'white',
             borderWidth: 1,
-            height: circleHight,
-            width: circleHight,
-            borderRadius: circleHight,
-            left: `${cicleValue}%`,
+            height: circleHeight,
+            width: circleHeight,
+            borderRadius: circleHeight,
+            left: `${circleValue}%`,
             top: Math.abs(
               paddingWithLabel - differenceCircleWithProgress / 2,
             ),
