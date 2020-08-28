@@ -1,6 +1,11 @@
 # react-native-segmented-progress-bar
 React Native component for having segmented or multipart progress bar
 
+
+### Installation
+```
+yarn add react-native-segmented-progress-bar
+```
 ### Usage sample
 
 This code
