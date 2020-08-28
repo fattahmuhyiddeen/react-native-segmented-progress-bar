@@ -13,6 +13,7 @@ This code
 ```
 <SegmentedProgressBar
   showSeparatorValue
+  borderRadius={3}
   values={[0, 18.5, 23.0, 27.5, 40]}
   colors={['grey', 'green', 'orange', 'red']}
   labels={['underweight','normal','overweight','obese']}
@@ -35,4 +36,5 @@ will generate this
 | `values`             | array of numbers                                                                           | Cumulative numbers that define how large each segment should be                                    | undefined | Required |
 | `colors`             | array of strings (`color` in any format (like `white` or `#ffffff` or `rgb(255,255,255)`)) | Number of elements in this array should be less than 1 element from `value` array                  | undefined | Required |
 | `height`             | number                                                                                     | Height of the progress bar only not including the label                                            | 8         | Optional |
+| `borderRadius`       | number                                                                                     | Border Radius of the bar                                                                           | undefined | Optional |
 | `showSeparatorValue` | boolean                                                                                    | If `true`, label on the top that display values of borders between each segments will be displayed | false     | Optional |
